@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olé - Mi Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+        <div class="logo" onclick="window.location.href='index.html'">Olé</div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Copa Libertadores</a></li>
+                    <li><a href="femenino.html">Fútbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </nav>
+            <div class="auth-section">
+                <div id="login-btn-container" style="display:none;">
+                    <button class="btn-login" onclick="window.location.href='index.html'">INICIAR SESION</button>
+                </div>
+                <div id="user-profile-container" style="align-items: center; gap: 10px; color: white; font-weight: bold; cursor: pointer;">
+                    <div style="width: 35px; height: 35px; background-color: var(--text-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--bg-dark);">US</div>
+                    <span class="user-name-hide-mobile">Usuario</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="profile-banner">
+        <div class="container profile-banner-content">
+            <div class="profile-avatar-wrap">
+                <div class="profile-avatar" id="profile-page-avatar">US</div>
+            </div>
+            <div class="profile-texts">
+                <h1 id="profile-page-name">Usuario</h1>
+                <p id="profile-page-handle">@usuario</p>
+            </div>
+            <div class="profile-date">Usuario desde <script>document.write(new Date().toLocaleDateString())</script></div>
+        </div>
+    </section>
+
+    <section class="clubs-section">
+        <div class="container">
+            <h3 style="margin-bottom: 20px; color: #333; font-size: 20px;">Clubes de tu interes</h3>
+        </div>
+        <div class="clubs-carousel-bg">
+            <div class="container clubs-grid">
+                <div class="club-icon shield-1">CAB</div>
+                <div class="club-icon shield-2">BOC</div>
+                <div class="club-icon shield-3">SL</div>
+                <div class="club-icon shield-4">RIV</div>
+                <div class="club-icon shield-5">RAC</div>
+                <div class="club-icon shield-6">IND</div>
+                <div class="club-icon shield-7">NOB</div>
+                <div class="club-icon shield-8">VEL</div>
+                <div class="club-icon shield-9">TAL</div>
+                <div class="club-icon shield-10">EST</div>
+                <div class="club-icon shield-11">CEN</div>
+                <div class="club-icon shield-12">LAN</div>
+                <div class="club-icon shield-13">BAN</div>
+                <div class="club-icon shield-14">GIM</div>
+                <div class="club-icon shield-15">HUR</div>
+                <div class="club-icon shield-16">COL</div>
+                <div class="club-icon shield-17">TIG</div>
+                <div class="club-icon shield-18">DEF</div>
+                <div class="club-icon shield-19">ARG</div>
+                <div class="club-icon shield-20">PLA</div>
+            </div>
+            <div style="text-align:center; margin-top:30px;">
+                <span style="background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 15px; color: white; cursor: pointer; margin: 0 5px;">&lt;</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 15px; color: white; cursor: pointer; margin: 0 5px;">&gt;</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="user-info-section container">
+        <h3 style="margin-bottom: 40px; color:#333; font-size: 20px;">Tu info</h3>
+        <div class="info-form-grid">
+            <div class="info-group">
+                <label>Nombre y apellidos</label>
+                <input type="text" id="info-name" disabled>
+            </div>
+            <div class="info-group empty-group"></div>
+            
+            <div class="info-group">
+                <label>Numero de documento</label>
+                <input type="text" value="12345678" disabled>
+                <span class="info-hint">Para que necesitamos tu numero de documento</span>
+            </div>
+            <div class="info-group">
+                <label>Edad</label>
+                <input type="text" value="25" disabled>
+            </div>
+
+            <div class="info-group">
+                <label>Correo electronico</label>
+                <input type="text" value="usuario@email.com" disabled>
+                <a href="#" class="info-link">Cambiar email</a>
+            </div>
+            
+        </div>
+        <button class="btn-logout" onclick="doLogout()">CERRAR SESIÓN</button>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-links">
+               <div class="logo-footer" onclick="window.location.href='index.html'">Olé</div>
+                <ul>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Resultados</a></li>
+                    <li><a href="femenino.html">Futbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-apps">
+                <div class="app-icons"><div class="app-box">Olé</div><div class="app-box">Olé tevé</div></div>
+                <div class="google-play">▶ Descargar en GooglePlay</div>
+            </div>
+        </div>
+        <div class="container footer-social">
+            <span class="social-icon">IG</span><span class="social-icon">FB</span><span class="social-icon">TK</span><span class="social-icon">YT</span><span class="social-icon">X</span><span class="social-icon">SP</span><span class="social-icon">TW</span>
+        </div>
+    </footer>
+
+    <!-- SCRIPT GLOBAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('ole_user_logged') !== 'true') {
+                window.location.href = 'index.html';
+            } else {
+                enableUserSession();
+                const name = localStorage.getItem('ole_user_name') || 'Usuario';
+                const initials = localStorage.getItem('ole_user_initials') || 'US';
+                document.getElementById('profile-page-name').innerText = name;
+                document.getElementById('info-name').value = name;
+                document.getElementById('profile-page-handle').innerText = '@' + name.toLowerCase().replace(/\s+/g, '');
+                document.getElementById('profile-page-avatar').innerText = initials;
+            }
+        });
+
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('show');
+        }
+
+        function doLogout() {
+            localStorage.removeItem('ole_user_logged');
+            window.location.href = 'index.html';
+        }
+
+        function enableUserSession() {
+            const userName = localStorage.getItem('ole_user_name') || 'Usuario';
+            const userInitials = localStorage.getItem('ole_user_initials') || 'US';
+            const userProfile = document.getElementById('user-profile-container');
+            
+            if(userProfile) {
+                userProfile.querySelector('.user-name-hide-mobile').innerText = userName;
+                userProfile.querySelector('div').innerText = userInitials;
+            }
+        }
+    </script>
+</body>
+</html>

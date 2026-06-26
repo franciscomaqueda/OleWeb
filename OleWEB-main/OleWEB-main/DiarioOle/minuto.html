@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olé - Minuto a Minuto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-page">
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+         <div class="logo" onclick="window.location.href='index.html'">Olé</div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Copa Libertadores</a></li>
+                    <li><a href="femenino.html">Fútbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-section">
+                <div id="login-btn-container">
+                    <button class="btn-login" onclick="toggleLoginModal()">INICIAR SESION</button>
+                </div>
+                <div id="user-profile-container" style="display: none; align-items: center; gap: 10px; color: white; font-weight: bold; cursor: pointer;" onclick="window.location.href='perfil.html'" title="Ver mi perfil">
+                    <div style="width: 35px; height: 35px; background-color: var(--text-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--bg-dark);">US</div>
+                    <span class="user-name-hide-mobile">Usuario</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dark-scoreboard">
+            <div class="team">
+                <div class="flag-circle germany-flag"></div>
+                <h2>Alemania</h2>
+            </div>
+            <div class="score-center">
+                <div class="live-badge-dark">En vivo <span class="red-dot"></span></div>
+                <div class="score-numbers">1 - 2</div>
+                <div class="match-time">90min</div>
+            </div>
+            <div class="team">
+                <div class="flag-circle brazil-flag"></div>
+                <h2>Brasil</h2>
+            </div>
+        </section>
+
+        <section class="live-layout-dark">
+            <div class="timeline-col-dark">
+                <div class="timeline-card-dark">
+                    <span class="t-time">89'</span>
+                    <div class="t-flag-wrapper"><div class="t-flag brazil-flag-small"></div><span class="t-icon-overlay">🟥</span></div>
+                    <span class="t-event">Tarjeta roja para Maquinha</span>
+                </div>
+                <div class="timeline-card-dark">
+                    <span class="t-time">77'</span>
+                    <div class="t-flag-wrapper"><div class="t-flag germany-flag-small"></div><span class="t-icon-overlay">🟨</span></div>
+                    <span class="t-event">Tarjeta amarilla para Roqué</span>
+                </div>
+                <div class="timeline-card-dark">
+                    <span class="t-time">65'</span>
+                    <div class="t-flag-wrapper"><div class="t-flag brazil-flag-small"></div><span class="t-icon-overlay" style="font-size: 14px;">🔄</span></div>
+                    <span class="t-event">Sale Lucas - Entra Lequinho</span>
+                </div>
+                <div class="timeline-card-dark">
+                    <span class="t-time">61'</span>
+                    <div class="t-flag-wrapper"><div class="t-flag brazil-flag-small"></div><span class="t-icon-overlay">⚽</span></div>
+                    <span class="t-event">Gol de Mourinho</span>
+                </div>
+                <div class="timeline-card-dark">
+                    <span class="t-time">21'</span>
+                    <div class="t-flag-wrapper"><div class="t-flag germany-flag-small"></div><span class="t-icon-overlay">⚽</span></div>
+                    <span class="t-event">Gol de Roqué</span>
+                </div>
+                <div class="timeline-card-dark">
+                    <span class="t-time">11'</span>
+                    <div class="t-flag-wrapper"><div class="t-flag brazil-flag-small"></div><span class="t-icon-overlay">⚽</span></div>
+                    <span class="t-event">Gol de Maquinha</span>
+                </div>
+            </div>
+
+            <div class="chat-widget-dark">
+                <div class="chat-top">
+                    <div class="chat-title">Chat en vivo</div>
+                    <div class="chat-viewers">2.4k <span class="red-dot" style="display:inline-block; width:10px; height:10px; background:red; border-radius:50%; margin-left:5px;"></span></div>
+                </div>
+                
+                <div class="chat-poll-banner" id="pollBanner" onclick="openPoll()">
+                    <span>👥 ¿Quién gana?</span>
+                </div>
+
+                <div class="chat-poll-container" id="pollContainer">
+                    <div class="poll-header">
+                        <span>👥 ¿Quién gana?</span>
+                        <span class="poll-close" onclick="closePoll()">✕</span>
+                    </div>
+                    <div class="poll-options" id="pollOptions">
+                        <button class="poll-btn" onclick="vote('alemania')">Alemania</button>
+                        <button class="poll-btn" onclick="vote('empate')">Empate</button>
+                        <button class="poll-btn" onclick="vote('brasil')">Brasil</button>
+                    </div>
+                    <div class="poll-results" id="pollResults" style="display: none;">
+                        <div class="results-labels"><span id="label-ger">0%</span><span id="label-emp">0%</span><span id="label-bra">0%</span></div>
+                        <div class="results-bars">
+                            <div class="bar-ger" id="bar-ger" style="width: 0%;"></div>
+                            <div class="bar-emp" id="bar-emp" style="width: 0%;"></div>
+                            <div class="bar-bra" id="bar-bra" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages-container">
+                    <div class="chat-msg"><span class="msg-time">22:28</span><div class="chat-avatar" style="background:#ccff00;"></div><div><strong>Matilde Baherio</strong><br>👏👏👏</div></div>
+                    <div class="chat-msg"><span class="msg-time">22:25</span><div class="chat-avatar" style="background:#00ff00;"></div><div><strong>Roberto Ancinas</strong><br>Mourinho tiene cositas...</div></div>
+                    <div class="chat-msg"><span class="msg-time">22:24</span><div class="chat-avatar" style="background:#334411;"></div><div><strong>Roque Do Andreinha</strong><br>Maquinha que JUGADOR</div></div>
+                    <div class="chat-msg"><span class="msg-time">22:23</span><div class="chat-avatar" style="background:#ccff00;"></div><div><strong>CarlosAcuña</strong><br>🇧🇷✌️⚽🙏</div></div>
+                </div>
+
+                <div class="chat-input-box-dark">
+                    <input type="text" disabled placeholder="Inicia sesión para chatear..." class="restricted-input" onkeypress="handleChatSubmit(event, this)">
+                    <span style="font-size:20px; color:#fff; cursor:pointer;" onclick="submitClickChat()">♡</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-full-dark">
+            <div class="stats-box-dark">
+                <div class="stats-header">ESTADISTICAS EN DIRECTO</div>
+                <div class="stat-row-dark"><div class="stat-labels-dark"><span>59%</span> <span class="stat-title">POSESIÓN</span> <span>41%</span></div><div class="stat-bar-bg-dark"><div class="stat-bar-fill-dark" style="width: 59%;"></div></div></div>
+                <div class="stat-row-dark"><div class="stat-labels-dark"><span>7</span> <span class="stat-title">DISPAROS TOTALES</span> <span>13</span></div><div class="stat-bar-bg-dark"><div class="stat-bar-fill-dark" style="width: 35%;"></div></div></div>
+                <div class="stat-row-dark"><div class="stat-labels-dark"><span>3</span> <span class="stat-title">DISPAROS A PUERTA</span> <span>6</span></div><div class="stat-bar-bg-dark"><div class="stat-bar-fill-dark" style="width: 33%;"></div></div></div>
+                <div class="stat-row-dark"><div class="stat-labels-dark"><span>46%</span> <span class="stat-title">DUELOS GANADOS</span> <span>54%</span></div><div class="stat-bar-bg-dark"><div class="stat-bar-fill-dark" style="width: 46%;"></div></div></div>
+            </div>
+        </section>
+
+        <section class="formations-info-layout">
+            <div class="formations-col">
+                <h3 class="section-title-dark">Formaciones</h3>
+                <div class="pitches-container">
+                    <div class="pitch">
+                        <div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div>
+                    </div>
+                    <div class="pitch">
+                        <div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div><div class="pitch-dot"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-col">
+                <h3 class="section-title-dark">Información del partido</h3>
+                <div class="info-box-dark">
+                    <div class="info-row"><div class="icon">🏆</div><div class="info-text"><strong>Competición</strong><p>Copa Mundial de la Fifa</p></div></div>
+                    <div class="info-row"><div class="icon">🕒</div><div class="info-text"><strong>Comienzo</strong><p>21:00hs</p></div></div>
+                    <div class="info-row"><div class="icon">📍</div><div class="info-text"><strong>Estadio</strong><p>Estadio Kansas City</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-layout-dark">
+            <h3 class="history-title-dark">Brasil - Últimos 5 partidos</h3>
+            <div class="history-boxes-dark">
+                <div class="h-box-dark win"><span class="h-badge">VICTORIA</span><div class="h-score-dark"><div class="t-flag brazil-flag-small"></div> 3-2 🇮🇸</div></div>
+                <div class="h-box-dark win"><span class="h-badge">VICTORIA</span><div class="h-score-dark"><div class="t-flag brazil-flag-small"></div> 2-1 🇻🇳</div></div>
+                <div class="h-box-dark win"><span class="h-badge">VICTORIA</span><div class="h-score-dark"><div class="t-flag brazil-flag-small"></div> 1-0 🇪🇨</div></div>
+                <div class="h-box-dark win"><span class="h-badge">VICTORIA</span><div class="h-score-dark"><div class="t-flag brazil-flag-small"></div> 4-0 🇩🇿</div></div>
+                <div class="h-box-dark loss"><span class="h-badge">DERROTA</span><div class="h-score-dark"><div class="t-flag brazil-flag-small"></div> 0-3 🇦🇷</div></div>
+            </div>
+
+            <h3 class="history-title-dark">Alemania - Últimos 5 partidos</h3>
+            <div class="history-boxes-dark">
+                <div class="h-box-dark win"><span class="h-badge">VICTORIA</span><div class="h-score-dark"><div class="t-flag germany-flag-small"></div> 3-2 🇪🇸</div></div>
+                <div class="h-box-dark loss"><span class="h-badge">DERROTA</span><div class="h-score-dark"><div class="t-flag germany-flag-small"></div> 0-1 🇫🇷</div></div>
+                <div class="h-box-dark win"><span class="h-badge">VICTORIA</span><div class="h-score-dark"><div class="t-flag germany-flag-small"></div> 2-1 🇮🇹</div></div>
+                <div class="h-box-dark win"><span class="h-badge">VICTORIA</span><div class="h-score-dark"><div class="t-flag germany-flag-small"></div> 4-0 🇧🇦</div></div>
+                <div class="h-box-dark loss"><span class="h-badge">DERROTA</span><div class="h-score-dark"><div class="t-flag germany-flag-small"></div> 1-2 🇨🇴</div></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-links">
+              <div class="logo-footer" onclick="window.location.href='index.html'">Olé</div>
+                <ul>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Resultados</a></li>
+                    <li><a href="femenino.html">Futbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-apps">
+                <div class="app-icons"><div class="app-box">Olé</div><div class="app-box">Olé tevé</div></div>
+                <div class="google-play">▶ Descargar en GooglePlay</div>
+            </div>
+        </div>
+        <div class="container footer-social">
+            <span class="social-icon">IG</span><span class="social-icon">FB</span><span class="social-icon">TK</span><span class="social-icon">YT</span><span class="social-icon">X</span><span class="social-icon">SP</span><span class="social-icon">TW</span>
+        </div>
+    </footer>
+
+    <!-- MODAL DE LOGIN GLOBAL -->
+    <div id="loginModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="new-login-modal">
+            <div class="modal-left">
+                <span class="modal-close-mobile" onclick="toggleLoginModal()">✕</span>
+                <h2 class="modal-form-title">Datos personales</h2>
+                <form onsubmit="doLogin(event)">
+                    <div class="input-group">
+                        <label>Nombre y apellidos</label>
+                        <input type="text" placeholder="Nombre y apellidos" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Edad</label>
+                        <input type="number" placeholder="Edad" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Numero de documento</label>
+                        <input type="text" placeholder="Numero de documento" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" placeholder="Correo electronico" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>¿Qué secciones son de tu interes?</label>
+                        <div class="custom-multi-select">
+                            <div class="select-box" onclick="toggleMultiSelect()">Seleccionar categorias <span>↓</span></div>
+                            <div class="select-options" id="multiSelectOptions">
+                                <label><input type="checkbox" value="1"> Mundial 2026</label>
+                                <label><input type="checkbox" value="2"> Copa Libertadores</label>
+                                <label><input type="checkbox" value="3"> Fútbol femenino</label>
+                                <label><input type="checkbox" value="4"> Otros deportes</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            <p>¿Acepta los terminos y condiciones que proporciona dicho sorteo?</p>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <p>¿Acepta recibir correos electronicos por parte de nuestro equipo de comunicación y marketing digital?</p>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit-form">Ingresar a mi cuenta</button>
+                </form>
+            </div>
+            <div class="modal-right img-placeholder" style="background-image: url('img/scaloni.jpg');">
+                <span class="modal-close-desktop" onclick="toggleLoginModal()">✕</span>
+                <div class="modal-right-overlay">
+                    <h3>El fútbol, al<br>alcance de la<br>mano</h3>
+                    <p>Registrate para no perderte las noticias de ultimo momento y poder participar de los debates en el minuto a minuto de cada encuentro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT GLOBAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('ole_user_logged') === 'true') {
+                enableUserSession();
+            }
+        });
+
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('show');
+        }
+
+        function toggleLoginModal() {
+            const modal = document.getElementById('loginModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeModalOutside(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                toggleLoginModal();
+            }
+        }
+
+        function toggleMultiSelect() {
+            document.getElementById('multiSelectOptions').classList.toggle('show');
+        }
+
+        function doLogin(event) {
+            event.preventDefault(); 
+            const inputs = event.target.querySelectorAll('input[type="text"]');
+            let nameVal = "Usuario";
+            if(inputs.length > 0) nameVal = inputs[0].value;
+            
+            localStorage.setItem('ole_user_logged', 'true');
+            localStorage.setItem('ole_user_name', nameVal);
+            
+            const words = nameVal.trim().split(' ');
+            let initials = '';
+            if (words.length > 1) {
+                initials = words[0][0] + words[1][0];
+            } else {
+                initials = words[0][0] + (words[0][1] || '');
+            }
+            localStorage.setItem('ole_user_initials', initials.toUpperCase());
+
+            enableUserSession();
+            toggleLoginModal();
+        }
+
+        function doLogout() {
+            localStorage.removeItem('ole_user_logged');
+            location.reload();
+        }
+
+        function enableUserSession() {
+            const loginBtn = document.getElementById('login-btn-container');
+            const userProfile = document.getElementById('user-profile-container');
+            const userName = localStorage.getItem('ole_user_name') || 'Usuario';
+            const userInitials = localStorage.getItem('ole_user_initials') || 'US';
+
+            if(loginBtn) loginBtn.style.display = 'none';
+            if(userProfile) {
+                userProfile.style.display = 'flex';
+                userProfile.querySelector('.user-name-hide-mobile').innerText = userName;
+                userProfile.querySelector('div').innerText = userInitials;
+            }
+            
+            const restrictedInputs = document.querySelectorAll('.restricted-input');
+            restrictedInputs.forEach(input => {
+                input.disabled = false;
+                if(input.closest('.chat-input-box-dark')) {
+                    input.placeholder = "Escribe un mensaje..."; 
+                } else {
+                    input.placeholder = "Deja tu opinión..."; 
+                }
+            });
+        }
+
+        function handleReaction(element, type) {
+            if (localStorage.getItem('ole_user_logged') !== 'true') {
+                alert("Debes iniciar sesión para reaccionar a los comentarios.");
+                return;
+            }
+            
+            const parent = element.parentElement;
+            const likeBtn = parent.children[0];
+            const dislikeBtn = parent.children[1];
+
+            if (type === 'like') {
+                if (element.classList.contains('active-like')) {
+                    element.classList.remove('active-like');
+                } else {
+                    element.classList.add('active-like');
+                    dislikeBtn.classList.remove('active-dislike');
+                }
+            } else {
+                if (element.classList.contains('active-dislike')) {
+                    element.classList.remove('active-dislike');
+                } else {
+                    element.classList.add('active-dislike');
+                    likeBtn.classList.remove('active-like');
+                }
+            }
+        }
+
+        function handleChatSubmit(event, inputElement) {
+            if (event.key === 'Enter' && inputElement.value.trim() !== '') {
+                enviarMensajeChat(inputElement);
+            }
+        }
+
+        function submitClickChat() {
+            const input = document.querySelector('.chat-input-box-dark input');
+            if (!input.disabled && input.value.trim() !== '') {
+                enviarMensajeChat(input);
+            }
+        }
+
+        function enviarMensajeChat(inputElement) {
+            const text = inputElement.value.trim();
+            const container = document.getElementById('chat-messages-container');
+            const userName = localStorage.getItem('ole_user_name') || 'Usuario';
+            const userInitials = localStorage.getItem('ole_user_initials') || 'US';
+            
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+            
+            const newMsg = document.createElement('div');
+            newMsg.className = 'chat-msg';
+            newMsg.innerHTML = `
+                <span class="msg-time">${timeStr}</span>
+                <div class="chat-avatar" style="background:var(--text-green); display:flex; align-items:center; justify-content:center; color:var(--bg-dark); font-size:12px; font-weight:bold;">${userInitials}</div>
+                <div><strong>${userName}</strong><br>${text}</div>
+            `;
+            
+            container.appendChild(newMsg);
+            container.scrollTop = container.scrollHeight;
+            inputElement.value = '';
+        }
+
+        function openPoll() {
+            document.getElementById('pollContainer').style.display = 'block';
+            document.getElementById('pollBanner').style.display = 'none';
+        }
+
+        function closePoll() {
+            document.getElementById('pollContainer').style.display = 'none';
+            document.getElementById('pollBanner').style.display = 'block';
+        }
+
+        function vote(option) {
+            document.getElementById('pollOptions').style.display = 'none';
+            document.getElementById('pollResults').style.display = 'block';
+            
+            let val1 = Math.floor(Math.random() * 40) + 10; 
+            let val2 = Math.floor(Math.random() * 40) + 10;
+            let val3 = 100 - val1 - val2;
+
+            document.getElementById('label-ger').innerText = val1 + '%';
+            document.getElementById('label-emp').innerText = val2 + '%';
+            document.getElementById('label-bra').innerText = val3 + '%';
+
+            document.getElementById('bar-ger').style.width = val1 + '%';
+            document.getElementById('bar-emp').style.width = val2 + '%';
+            document.getElementById('bar-bra').style.width = val3 + '%';
+        }
+    </script>
+</body>
+</html>

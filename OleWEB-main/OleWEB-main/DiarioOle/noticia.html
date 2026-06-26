@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olé - Desarrollo de Noticia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+          <div class="logo" onclick="window.location.href='index.html'">Olé</div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Copa Libertadores</a></li>
+                    <li><a href="femenino.html">Fútbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </nav>
+            <div class="auth-section">
+                <div id="login-btn-container">
+                    <button class="btn-login" onclick="toggleLoginModal()">INICIAR SESION</button>
+                </div>
+                <div id="user-profile-container" style="display: none; align-items: center; gap: 10px; color: white; font-weight: bold; cursor: pointer;" onclick="window.location.href='perfil.html'" title="Ver mi perfil">
+                    <div style="width: 35px; height: 35px; background-color: var(--text-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--bg-dark);">US</div>
+                    <span class="user-name-hide-mobile">Usuario</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container hero-femenino img-placeholder" style="background-image: url('img/2.png');">
+        <div class="hero-femenino-overlay">
+            <h1>Asi se prepara<br>la Selección para el mundial</h1>
+        </div>
+    </section>
+
+    <main class="container main-layout">
+        <section class="col-noticias">
+            <article class="news-card-femenino">
+                <div class="card-img-femenino img-placeholder" style="background-image: url('img/2.png');"><span class="badge">ARGENTINA</span></div>
+                <div class="card-title-green"><h2>Asi se prepara la Selección para el mundial</h2></div>
+                
+                <div class="article-meta"><span>Por Gaston Edul</span><span>10/06/2026</span></div>
+                <div class="article-content">
+                    <p>La Selección Argentina concluyó con <strong>éxito</strong> su <strong>preparación</strong> para el <strong>Mundial</strong> 2026 tras golear 3-0 a Islandia en su último amistoso disputado en Miami. Con un fútbol de alto vuelo y goles de Lautaro Martínez, Lionel Messi y un zapatazo de Rodrigo De Paul, el equipo dirigido por Lionel Scaloni llega en <strong>gran forma, liderando</strong> el ranking <strong>FIFA</strong> y exhibiendo una sólida identidad colectiva.</p>
+                    <p>Tras el encuentro, el cuerpo técnico se mostró sumamente conforme con el recambio generacional y el nivel físico de los futbolistas, quienes ya ponen la mira en el debut <strong>oficial</strong>. "El grupo está con el foco puesto en el objetivo y la ilusión intacta", declararon desde el predio de concentración.</p>
+                    <p>El próximo <strong>desafío</strong> albiceleste será el 16 de junio ante Argelia, en el inicio de su <strong>participación</strong> por el <strong>Grupo J</strong>, un encuentro clave para arrancar con el pie derecho y empezar a pavimentar el camino hacia la defensa del título.</p>
+                    <img src="img/nose.png" alt="Tagliafico" class="article-inline-img">
+                    <p>La unica baja confirmada para el debut será <strong>Nicolás Tagliafico</strong>. El lateral izquierdo sufrió una lesión en el sóleo de la pierna izquierda y se perderá, al menos, el encuentro ante Argelia. En el cuerpo técnico mantienen la esperanza de recuperarlo para el segundo compromiso del Grupo J, frente a Austria, aunque todo dependerá de su evolución.</p>
+
+                    <div class="info-box">
+                        <div class="info-box-title"><span style="font-size: 20px;">📅</span> EL DEBUT MUNDIALISTA</div>
+                        <p><strong>RIVAL:</strong> Argelia</p>
+                        <p><strong>FECHA:</strong> Martes 16 de Junio, 22hs</p>
+                        <p><strong>SEDE:</strong> Kansas City</p>
+                    </div>
+                </div>
+                
+                <div class="comment-card-dark">
+                    <div class="main-comment">
+                        <div class="comment-header"><div class="avatar img-placeholder"></div><div class="user-info"><strong>@Gaston Edul</strong> <span class="verified">✔</span></div></div>
+                        <p class="comment-text">Estamos listos!!</p>
+                        <div class="comment-actions">
+                            <span class="icon" onclick="handleReaction(this, 'like')">👍</span> 
+                            <span class="icon" onclick="handleReaction(this, 'dislike')">👎</span>
+                        </div>
+                    </div>
+                    <div class="comment-reply-section">
+                        <div class="reply-input-container">
+                            <div class="input-avatar-placeholder logged-out-dot"></div>
+                            <input type="text" disabled placeholder="Inicia sesión para dejar tu opinión..." class="restricted-input" onkeypress="handleCommentSubmit(event, this)">
+                            <span class="icon-lines">≡</span>
+                        </div>
+                        <div class="new-comments-container"></div>
+                    </div>
+                    <div class="comment-footer">14 Respuestas <span>⌄</span></div>
+                </div>
+            </article>
+        </section>
+
+        <aside class="col-sidebar">
+            <h3 class="sidebar-title" style="color: var(--text-green); font-size: 20px; margin-bottom: 15px; line-height: 1.2;">Noticias<br>relacionadas</h3>
+            <article class="sidebar-card">
+                <div class="sidebar-img img-placeholder" style="background-image: url('img/messipaul.png');"></div>
+                <div class="sidebar-text">
+                    <h4>Lionel Messi y Rodrigo De Paul, la dupla inseparable</h4>
+                    <p>La dupla intensifica su <strong>preparación</strong> en los entrenamientos de la <strong>Selección Argentina</strong> de cara al <strong>desafío</strong> del <strong>Mundial 2026</strong>.</p>
+                </div>
+            </article>
+            <article class="sidebar-card">
+                <div class="sidebar-img img-placeholder" style="background-image: url('img/modelo.png');"></div>
+                <div class="sidebar-text">
+                    <h4>Seis respuestas en 38 segundos</h4>
+                    <p>La <strong>extraña</strong> entrevista de <strong>Marcelo Bielsa</strong> antes del <strong>debut</strong> de <strong>Uruguay</strong> en el <strong>Mundial 2026</strong>.</p>
+                </div>
+            </article>
+            <article class="sidebar-card">
+                <div class="sidebar-img img-placeholder" style="background-image: url('img/sele.png');"></div>
+                <div class="sidebar-text">
+                    <h4>La logística de la selección</h4>
+                    <p>La <strong>preparación argentina</strong> para este <strong>2026</strong> no solo se centró en lo <strong>futbolístico</strong>, sino también en una <strong>meticulosa planificación logística</strong> para adaptarse a las <strong>condiciones climáticas</strong>.</p>
+                </div>
+            </article>
+            <article class="sidebar-card">
+                <div class="sidebar-img img-placeholder" style="background-image: url('img/nera.png');"></div>
+                <div class="sidebar-text">
+                    <h4>La logística de la selección</h4>
+                    <p>A un día del inicio del <strong>Mundial de Estados Unidos, México y Canadá 2026</strong>, una de las polémicas fuera de la cancha tiene como protagonista a <strong>la Selección de Haití, que recibió una observación de la FIFA sobre su camiseta titular</strong>.</p>
+                </div>
+            </article>
+        </aside>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-links">
+              <div class="logo-footer" onclick="window.location.href='index.html'">Olé</div>
+                <ul>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Resultados</a></li>
+                    <li><a href="femenino.html">Futbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-apps">
+                <div class="app-icons"><div class="app-box">Olé</div><div class="app-box">Olé tevé</div></div>
+                <div class="google-play">▶ Descargar en GooglePlay</div>
+            </div>
+        </div>
+        <div class="container footer-social">
+            <span class="social-icon">IG</span><span class="social-icon">FB</span><span class="social-icon">TK</span><span class="social-icon">YT</span><span class="social-icon">X</span><span class="social-icon">SP</span><span class="social-icon">TW</span>
+        </div>
+    </footer>
+
+    <!-- MODAL DE LOGIN GLOBAL -->
+    <div id="loginModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="new-login-modal">
+            <div class="modal-left">
+                <span class="modal-close-mobile" onclick="toggleLoginModal()">✕</span>
+                <h2 class="modal-form-title">Datos personales</h2>
+                <form onsubmit="doLogin(event)">
+                    <div class="input-group">
+                        <label>Nombre y apellidos</label>
+                        <input type="text" placeholder="Nombre y apellidos" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Edad</label>
+                        <input type="number" placeholder="Edad" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Numero de documento</label>
+                        <input type="text" placeholder="Numero de documento" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" placeholder="Correo electronico" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>¿Qué secciones son de tu interes?</label>
+                        <div class="custom-multi-select">
+                            <div class="select-box" onclick="toggleMultiSelect()">Seleccionar categorias <span>↓</span></div>
+                            <div class="select-options" id="multiSelectOptions">
+                                <label><input type="checkbox" value="1"> Mundial 2026</label>
+                                <label><input type="checkbox" value="2"> Copa Libertadores</label>
+                                <label><input type="checkbox" value="3"> Fútbol femenino</label>
+                                <label><input type="checkbox" value="4"> Otros deportes</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            <p>¿Acepta los terminos y condiciones que proporciona dicho sorteo?</p>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <p>¿Acepta recibir correos electronicos por parte de nuestro equipo de comunicación y marketing digital?</p>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit-form">Ingresar a mi cuenta</button>
+                </form>
+            </div>
+            <div class="modal-right img-placeholder" style="background-image: url('img/scaloni.jpg');">
+                <span class="modal-close-desktop" onclick="toggleLoginModal()">✕</span>
+                <div class="modal-right-overlay">
+                    <h3>El fútbol, al<br>alcance de la<br>mano</h3>
+                    <p>Registrate para no perderte las noticias de ultimo momento y poder participar de los debates en el minuto a minuto de cada encuentro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT GLOBAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('ole_user_logged') === 'true') {
+                enableUserSession();
+            }
+        });
+
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('show');
+        }
+
+        function toggleLoginModal() {
+            const modal = document.getElementById('loginModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeModalOutside(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                toggleLoginModal();
+            }
+        }
+
+        function toggleMultiSelect() {
+            document.getElementById('multiSelectOptions').classList.toggle('show');
+        }
+
+        function doLogin(event) {
+            event.preventDefault(); 
+            const inputs = event.target.querySelectorAll('input[type="text"]');
+            let nameVal = "Usuario";
+            if(inputs.length > 0) nameVal = inputs[0].value;
+            
+            localStorage.setItem('ole_user_logged', 'true');
+            localStorage.setItem('ole_user_name', nameVal);
+            
+            const words = nameVal.trim().split(' ');
+            let initials = '';
+            if (words.length > 1) {
+                initials = words[0][0] + words[1][0];
+            } else {
+                initials = words[0][0] + (words[0][1] || '');
+            }
+            localStorage.setItem('ole_user_initials', initials.toUpperCase());
+
+            enableUserSession();
+            toggleLoginModal();
+        }
+
+        function doLogout() {
+            localStorage.removeItem('ole_user_logged');
+            location.reload();
+        }
+
+        function enableUserSession() {
+            const loginBtn = document.getElementById('login-btn-container');
+            const userProfile = document.getElementById('user-profile-container');
+            const userName = localStorage.getItem('ole_user_name') || 'Usuario';
+            const userInitials = localStorage.getItem('ole_user_initials') || 'US';
+
+            if(loginBtn) loginBtn.style.display = 'none';
+            if(userProfile) {
+                userProfile.style.display = 'flex';
+                userProfile.querySelector('.user-name-hide-mobile').innerText = userName;
+                userProfile.querySelector('div').innerText = userInitials;
+            }
+            
+            const restrictedInputs = document.querySelectorAll('.restricted-input');
+            restrictedInputs.forEach(input => {
+                input.disabled = false;
+                if(input.closest('.chat-input-box-dark')) {
+                    input.placeholder = "Escribe un mensaje..."; 
+                } else {
+                    input.placeholder = "Deja tu opinión..."; 
+                }
+            });
+
+            const avatars = document.querySelectorAll('.input-avatar-placeholder');
+            avatars.forEach(avatar => {
+                avatar.classList.remove('logged-out-dot');
+                avatar.innerHTML = userInitials;
+                avatar.style.display = 'flex';
+                avatar.style.alignItems = 'center';
+                avatar.style.justifyContent = 'center';
+                avatar.style.fontSize = '10px';
+                avatar.style.fontWeight = 'bold';
+                avatar.style.color = 'var(--bg-dark)';
+            });
+        }
+
+        function handleReaction(element, type) {
+            if (localStorage.getItem('ole_user_logged') !== 'true') {
+                alert("Debes iniciar sesión para reaccionar a los comentarios.");
+                return;
+            }
+            
+            const parent = element.parentElement;
+            const likeBtn = parent.children[0];
+            const dislikeBtn = parent.children[1];
+
+            if (type === 'like') {
+                if (element.classList.contains('active-like')) {
+                    element.classList.remove('active-like');
+                } else {
+                    element.classList.add('active-like');
+                    dislikeBtn.classList.remove('active-dislike');
+                }
+            } else {
+                if (element.classList.contains('active-dislike')) {
+                    element.classList.remove('active-dislike');
+                } else {
+                    element.classList.add('active-dislike');
+                    likeBtn.classList.remove('active-like');
+                }
+            }
+        }
+
+        function handleCommentSubmit(event, inputElement) {
+            if (event.key === 'Enter' && inputElement.value.trim() !== '') {
+                const text = inputElement.value.trim();
+                const container = inputElement.closest('.comment-reply-section').querySelector('.new-comments-container');
+                const userName = localStorage.getItem('ole_user_name') || 'Usuario';
+                const userInitials = localStorage.getItem('ole_user_initials') || 'US';
+                
+                const now = new Date();
+                const timeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+                
+                const newComment = document.createElement('div');
+                newComment.style.marginTop = '20px';
+                newComment.style.marginBottom = '25px';
+                newComment.style.paddingLeft = '30px'; 
+                newComment.style.display = 'flex';
+                newComment.style.gap = '15px';
+                newComment.style.alignItems = 'flex-start';
+                
+                newComment.innerHTML = `
+                    <span style="color: #666; font-size: 12px; margin-top: 5px; min-width: 35px;">${timeStr}</span>
+                    <div style="width: 100%;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 25px; height: 25px; background-color: var(--text-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--bg-dark); font-weight: bold;">${userInitials}</div>
+                            <strong style="color: white; font-size: 14px;">${userName}</strong>
+                        </div>
+                        <p style="color: #ccc; font-size: 14px; margin: 5px 0 0 35px;">${text}</p>
+                        <div class="comment-actions" style="margin-bottom: 0; padding-left: 35px; margin-top: 10px;">
+                            <span class="icon" onclick="handleReaction(this, 'like')">👍</span> 
+                            <span class="icon" onclick="handleReaction(this, 'dislike')">👎</span>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(newComment);
+                inputElement.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

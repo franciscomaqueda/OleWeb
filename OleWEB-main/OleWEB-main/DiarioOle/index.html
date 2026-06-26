@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olé - Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+        <div class="logo" onclick="window.location.href='index.html'">Olé</div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Copa Libertadores</a></li>
+                    <li><a href="femenino.html">Fútbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-section">
+                <div id="login-btn-container">
+                    <button class="btn-login" onclick="toggleLoginModal()">INICIAR SESION</button>
+                </div>
+                <div id="user-profile-container" style="display: none; align-items: center; gap: 10px; color: white; font-weight: bold; cursor: pointer;" onclick="window.location.href='perfil.html'" title="Ver mi perfil">
+                    <div style="width: 35px; height: 35px; background-color: var(--text-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--bg-dark);">US</div>
+                    <span class="user-name-hide-mobile">Usuario</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero img-placeholder" style="background-image: url('img/1.png');">
+        <div class="container hero-content">
+            <h1>La Decisión de<br>Scaloni</h1>
+            <p>Info de la noticia</p>
+            <button class="btn-primary" onclick="window.location.href='noticia.html'">Leer</button>
+        </div>
+    </section>
+
+    <main class="container main-layout">
+        <section class="col-noticias">
+            <h2 class="section-title">Ultimo momento</h2>
+            <a href="noticia.html" style="text-decoration: none; display: block;">
+                <div class="card-large img-placeholder" style="background-image: url('img/2.png');">
+                    <div class="card-overlay">
+                        <h3>Asi se prepara<br>la Selección para el mundial</h3>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <aside class="col-sidebar">
+            <div class="live-widget">
+                <div class="live-header">
+                    <span class="live-dot"></span> En vivo
+                </div>
+                <ul class="match-list">
+                    <li><span class="time active">91:20</span> Alemania <span>1-2</span> Brasil</li>
+                    <li><span class="time">16:45</span> Holanda <span>-</span> Ghana</li>
+                    <li><span class="time">17:00</span> Austria <span>-</span> Camerun</li>
+                    <li><span class="time">21:00</span> Peru <span>-</span> Francia</li>
+                    <li><span class="time">01:00</span> Jordania <span>-</span> Egipto</li>
+                </ul>
+                <a href="minuto.html" class="btn-outline" style="display:block; text-align:center; text-decoration:none;">Minuto a minuto</a>
+            </div>
+        </aside>
+    </main>
+
+    <section class="amistosos-ticker">
+        <div class="container">
+            <h2 class="section-title dark-mode">Amistosos FIFA</h2>
+            <div class="ticker-grid">
+                <div class="match-col">
+                    <p class="date">Ayer - 09/06</p>
+                    <p>🇨🇦 Canadá <span>1</span></p>
+                    <p>🇬🇹 Guatemala <span>0</span></p>
+                </div>
+                <div class="match-col">
+                    <p class="date">Ayer - 09/06</p>
+                    <p>🇧🇴 Bolivia <span>1</span></p>
+                    <p>🇵🇦 Panamá <span>1</span></p>
+                </div>
+                <div class="match-col">
+                    <p class="date">Hoy - 17hs</p>
+                    <p>🇵🇦 Panamá <span>0</span></p>
+                    <p>🇲🇽 México <span>1</span></p>
+                </div>
+                <div class="match-col">
+                    <p class="date">Hoy - 16hs</p>
+                    <p>🇧🇴 Bolivia <span>0</span></p>
+                    <p>🇲🇽 México <span>1</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRILLA COMPLETA DE 16 NOTICIAS -->
+    <div class="container categories-layout">
+        
+        <section class="category-section">
+            <h2 class="section-title">Mundial 2026</h2>
+            <div class="grid-2-col">
+                <div class="news-card img-placeholder" style="background-image: url('img/mundial1.jpg');">
+                    <div class="card-overlay">
+                        <h4>Amistosos pre Mundial de hoy, horario, dónde verlo en vivo y partidos</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/mundial2.jpg');">
+                    <div class="card-overlay">
+                        <h4>A qué hora juega hoy Bélgica vs Egipto y como ver el mundial en vivo el mundial 2026</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/mundial3.jpg');">
+                    <div class="card-overlay">
+                        <h4>Suiza enfrenta a Canadá, en la lucha por el primer puesto del grupo B</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/mundial4.jpg');">
+                    <div class="card-overlay">
+                        <h4>Bosnia ganó, sueña con la clasificación y Qatar quedó afuera del Mundial 2026</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="section-title">Copa Libertadores 2026</h2>
+            <div class="grid-2-col">
+                <div class="news-card img-placeholder" style="background-image: url('img/libertadores1.jpg');">
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/libertadores2.jpg');">
+                    <span class="badge">BOCA JUNIORS</span>
+                    <div class="card-overlay">
+                        <h4>Paredes y los rumores de su salida de Boca:</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/libertadores3.jpg');">
+                    <div class="card-overlay">
+                        <h4>Pablo Ferreira, del Ascenso a jugar los octavos de Libertadores con Platense: "Vamos a dar el batacazo"</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/libertadores4.jpg');">
+                    <div class="card-overlay">
+                        <h4>La reacción de la prensa chilena tras el triunfo de Universidad Católica ante Boca: "Histórico" y Paredes "domado"</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="section-title">Futbol femenino</h2>
+            <div class="grid-2-col">
+                <div class="news-card img-placeholder" style="background-image: url('img/fem1.jpg');">
+                    <div class="card-overlay">
+                        <h4>Inédito: Argentina venció por primera vez en la historia a Brasil en el Sub-20 femenino</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/fem2.jpg');">
+                    <div class="card-overlay">
+                        <h4>Argentina cerró con un empate e invicta la triple fecha ante Colombia</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/fem3.jpg');">
+                    <div class="card-overlay">
+                        <h4>Dejo Belgrano y se fue a Talleres: el traspaso que sacudió a Córdoba</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/fem4.jpg');">
+                    <div class="card-overlay">
+                        <h4>Escándalo por un comentario racista de una jugadora de Independiente</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="section-title">Otros deportes</h2>
+            <div class="grid-2-col">
+                <div class="news-card img-placeholder" style="background-image: url('img/otros1.jpg');">
+                    <div class="card-overlay">
+                        <h4>Franco Colapinto, sancionado en Barcelona: cambió su posición final</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/otros2.jpg');">
+                    <div class="card-overlay">
+                        <h4>ILia Topuria se pronuncia tras su derrota en el UFC, ¿Qué dijo?</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/otros3.jpg');">
+                    <div class="card-overlay">
+                        <h4>¡Francisco Cerúndolo, campeón de Queen's!</h4>
+                    </div>
+                </div>
+                <div class="news-card img-placeholder" style="background-image: url('img/otros4.jpg');">
+                    <div class="card-overlay">
+                        <h4>Histórico: Argentina será cabeza de serie en el Mundial de Handball 2027</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- SECCIÓN EJEMPLO DE COMENTARIOS (FLOTANTE) -->
+    <div class="container" style="margin-bottom: 50px;">
+        <h2 class="section-title">Opiniones</h2>
+        
+        <div class="comment-card-dark">
+            <div class="main-comment">
+                <div class="comment-header">
+                    <div class="avatar img-placeholder"></div>
+                    <div class="user-info"><strong>@Gaston Edul</strong> <span class="verified">✔</span></div>
+                </div>
+                <p class="comment-text">Gran paso para la selección, hay que seguir por este camino.</p>
+                <div class="comment-actions">
+                    <span class="icon" onclick="handleReaction(this, 'like')">👍</span> 
+                    <span class="icon" onclick="handleReaction(this, 'dislike')">👎</span>
+                </div>
+            </div>
+            
+            <div class="comment-reply-section">
+                <div class="reply-input-container">
+                    <div class="input-avatar-placeholder logged-out-dot"></div>
+                    <input type="text" disabled placeholder="Inicia sesión para dejar tu opinión..." class="restricted-input" onkeypress="handleCommentSubmit(event, this)">
+                    <span class="icon-lines">≡</span>
+                </div>
+                <div class="new-comments-container"></div>
+            </div>
+            
+            <div class="comment-footer">
+                2 Respuestas <span>⌄</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-links">
+                <div class="logo-footer" onclick="window.location.href='index.html'">Olé</div>
+                <ul>
+                    <li><a href="mundial2026.html">Mundial 2026</a></li>
+                    <li><a href="copalibertadores.html">Resultados</a></li>
+                    <li><a href="femenino.html">Futbol femenino</a></li>
+                    <li><a href="otros-deportes.html">Otros deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-apps">
+                <div class="app-icons">
+                    <div class="app-box">Olé</div>
+                    <div class="app-box">Olé tevé</div>
+                </div>
+                <div class="google-play">
+                    ▶ Descargar en GooglePlay
+                </div>
+            </div>
+        </div>
+        <div class="container footer-social">
+            <span class="social-icon">IG</span><span class="social-icon">FB</span><span class="social-icon">TK</span><span class="social-icon">YT</span><span class="social-icon">X</span><span class="social-icon">SP</span><span class="social-icon">TW</span>
+        </div>
+    </footer>
+
+    <!-- MODAL DE LOGIN GLOBAL -->
+    <div id="loginModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="new-login-modal">
+            <div class="modal-left">
+                <span class="modal-close-mobile" onclick="toggleLoginModal()">✕</span>
+                <h2 class="modal-form-title">Datos personales</h2>
+                <form onsubmit="doLogin(event)">
+                    <div class="input-group">
+                        <label>Nombre y apellidos</label>
+                        <input type="text" placeholder="Nombre y apellidos" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Edad</label>
+                        <input type="number" placeholder="Edad" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Numero de documento</label>
+                        <input type="text" placeholder="Numero de documento" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" placeholder="Correo electronico" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>¿Qué secciones son de tu interes?</label>
+                        <div class="custom-multi-select">
+                            <div class="select-box" onclick="toggleMultiSelect()">Seleccionar categorias <span>↓</span></div>
+                            <div class="select-options" id="multiSelectOptions">
+                                <label><input type="checkbox" value="1"> Mundial 2026</label>
+                                <label><input type="checkbox" value="2"> Copa Libertadores</label>
+                                <label><input type="checkbox" value="3"> Fútbol femenino</label>
+                                <label><input type="checkbox" value="4"> Otros deportes</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            <p>¿Acepta los terminos y condiciones que proporciona dicho sorteo?</p>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <p>¿Acepta recibir correos electronicos por parte de nuestro equipo de comunicación y marketing digital?</p>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit-form">Ingresar a mi cuenta</button>
+                </form>
+            </div>
+            <div class="modal-right img-placeholder" style="background-image: url('img/scaloni.jpg');">
+                <span class="modal-close-desktop" onclick="toggleLoginModal()">✕</span>
+                <div class="modal-right-overlay">
+                    <h3>El fútbol, al<br>alcance de la<br>mano</h3>
+                    <p>Registrate para no perderte las noticias de ultimo momento y poder participar de los debates en el minuto a minuto de cada encuentro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT GLOBAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('ole_user_logged') === 'true') {
+                enableUserSession();
+            }
+        });
+
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('show');
+        }
+
+        function toggleLoginModal() {
+            const modal = document.getElementById('loginModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeModalOutside(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                toggleLoginModal();
+            }
+        }
+
+        function toggleMultiSelect() {
+            document.getElementById('multiSelectOptions').classList.toggle('show');
+        }
+
+        function doLogin(event) {
+            event.preventDefault(); 
+            const inputs = event.target.querySelectorAll('input[type="text"]');
+            let nameVal = "Usuario";
+            if(inputs.length > 0) nameVal = inputs[0].value;
+            
+            localStorage.setItem('ole_user_logged', 'true');
+            localStorage.setItem('ole_user_name', nameVal);
+            
+            const words = nameVal.trim().split(' ');
+            let initials = '';
+            if (words.length > 1) {
+                initials = words[0][0] + words[1][0];
+            } else {
+                initials = words[0][0] + (words[0][1] || '');
+            }
+            localStorage.setItem('ole_user_initials', initials.toUpperCase());
+
+            enableUserSession();
+            toggleLoginModal();
+        }
+
+        function doLogout() {
+            localStorage.removeItem('ole_user_logged');
+            location.reload();
+        }
+
+        function enableUserSession() {
+            const loginBtn = document.getElementById('login-btn-container');
+            const userProfile = document.getElementById('user-profile-container');
+            const userName = localStorage.getItem('ole_user_name') || 'Usuario';
+            const userInitials = localStorage.getItem('ole_user_initials') || 'US';
+
+            if(loginBtn) loginBtn.style.display = 'none';
+            if(userProfile) {
+                userProfile.style.display = 'flex';
+                userProfile.querySelector('.user-name-hide-mobile').innerText = userName;
+                userProfile.querySelector('div').innerText = userInitials;
+            }
+            
+            const restrictedInputs = document.querySelectorAll('.restricted-input');
+            restrictedInputs.forEach(input => {
+                input.disabled = false;
+                input.placeholder = "Deja tu opinión..."; 
+            });
+
+            const avatars = document.querySelectorAll('.input-avatar-placeholder');
+            avatars.forEach(avatar => {
+                avatar.classList.remove('logged-out-dot');
+                avatar.innerHTML = userInitials;
+                avatar.style.display = 'flex';
+                avatar.style.alignItems = 'center';
+                avatar.style.justifyContent = 'center';
+                avatar.style.fontSize = '10px';
+                avatar.style.fontWeight = 'bold';
+                avatar.style.color = 'var(--bg-dark)';
+            });
+        }
+
+        function handleReaction(element, type) {
+            if (localStorage.getItem('ole_user_logged') !== 'true') {
+                alert("Debes iniciar sesión para reaccionar a los comentarios.");
+                return;
+            }
+            
+            const parent = element.parentElement;
+            const likeBtn = parent.children[0];
+            const dislikeBtn = parent.children[1];
+
+            if (type === 'like') {
+                if (element.classList.contains('active-like')) {
+                    element.classList.remove('active-like');
+                } else {
+                    element.classList.add('active-like');
+                    dislikeBtn.classList.remove('active-dislike');
+                }
+            } else {
+                if (element.classList.contains('active-dislike')) {
+                    element.classList.remove('active-dislike');
+                } else {
+                    element.classList.add('active-dislike');
+                    likeBtn.classList.remove('active-like');
+                }
+            }
+        }
+
+        function handleCommentSubmit(event, inputElement) {
+            if (event.key === 'Enter' && inputElement.value.trim() !== '') {
+                const text = inputElement.value.trim();
+                const container = inputElement.closest('.comment-reply-section').querySelector('.new-comments-container');
+                const userName = localStorage.getItem('ole_user_name') || 'Usuario';
+                const userInitials = localStorage.getItem('ole_user_initials') || 'US';
+                
+                const now = new Date();
+                const timeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+                
+                const newComment = document.createElement('div');
+                newComment.style.marginTop = '20px';
+                newComment.style.marginBottom = '25px';
+                newComment.style.paddingLeft = '30px'; 
+                newComment.style.display = 'flex';
+                newComment.style.gap = '15px';
+                newComment.style.alignItems = 'flex-start';
+                
+                newComment.innerHTML = `
+                    <span style="color: #666; font-size: 12px; margin-top: 5px; min-width: 35px;">${timeStr}</span>
+                    <div style="width: 100%;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 25px; height: 25px; background-color: var(--text-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--bg-dark); font-weight: bold;">${userInitials}</div>
+                            <strong style="color: white; font-size: 14px;">${userName}</strong>
+                        </div>
+                        <p style="color: #ccc; font-size: 14px; margin: 5px 0 0 35px;">${text}</p>
+                        <div class="comment-actions" style="margin-bottom: 0; padding-left: 35px; margin-top: 10px;">
+                            <span class="icon" onclick="handleReaction(this, 'like')">👍</span> 
+                            <span class="icon" onclick="handleReaction(this, 'dislike')">👎</span>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(newComment);
+                inputElement.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
